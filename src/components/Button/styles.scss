@@ -1,0 +1,26 @@
+@import "common.scss";
+
+:local(.class) {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #fff;
+  // background-color: $glay-600;
+  border: none;
+  border-radius: 4px;
+
+  &.primary {
+    // background-color: $brand-core-orange;
+  }
+
+  &.link {
+    color: #000;
+    background-color: transparent;
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}
