@@ -60,7 +60,7 @@ function Header({ className, onClick, disabled, children, varient }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6">Senyou startup-kit</Typography>
+          <Typography variant="h6">Startup-kit</Typography>
         </Toolbar>
       </AppBar>
       <Sidemenu
