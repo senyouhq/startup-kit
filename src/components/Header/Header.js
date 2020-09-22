@@ -1,6 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import firebase from 'service/firebase'
+// import { useHistory } from 'react-router-dom'
 
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -8,16 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import StorefrontIcon from '@material-ui/icons/Storefront'
-import ListAltIcon from '@material-ui/icons/ListAlt'
-import DashboardIcon from '@material-ui/icons/Dashboard'
-import PeopleIcon from '@material-ui/icons/People'
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer'
-import ViewListIcon from '@material-ui/icons/ViewList'
-import RecentActorsIcon from '@material-ui/icons/RecentActors'
-
 import useAuth from 'hooks/useAuth'
-import useBrand from 'hooks/useBrand'
 
 import Sidemenu from './Sidemenu'
 
@@ -36,9 +26,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function Header({ className, onClick, disabled, children, varient }) {
-  const history = useHistory()
+  // const history = useHistory()
   const classes = useStyles()
   const [sidemenuOpen, setSidemenuOpen] = React.useState(false)
+  const { state: userState, signOut } = useAuth()
   // const [sidemenus, setSidemenus] = React.useState([])
 
   // React.useEffect(() => {
@@ -46,12 +37,9 @@ function Header({ className, onClick, disabled, children, varient }) {
   // }, [brandId])
 
   function handleLogout() {
-    return firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        window.location.assign('/sign-in')
-      })
+    return signOut().then(() => {
+      window.location.assign('/sign-in')
+    })
   }
 
   // function handleAccountClick() {
@@ -77,7 +65,7 @@ function Header({ className, onClick, disabled, children, varient }) {
       </AppBar>
       <Sidemenu
         // user={auth.state.user}
-        user={{}}
+        user={userState.user}
         // menus={sidemenus}
         open={sidemenuOpen}
         // onAccountClick={handleAccountClick}

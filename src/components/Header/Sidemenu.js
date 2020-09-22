@@ -50,11 +50,11 @@ export default function Sidemenu({
     <Drawer anchor="left" open={open} onClose={onClose}>
       <div className={classes.sideMenu}>
         <List>
-          <ListItem button key={'User name'} onClick={onAccountClick}>
+          <ListItem key={'User name'} onClick={onAccountClick}>
             <ListItemIcon>
               <AccountCircleIcon />
             </ListItemIcon>
-            <ListItemText primary={user.name} secondary={user.isAdmin ? '(admin)' : ''} />
+            <ListItemText primary={user.displayName} secondary={user.isAdmin ? '(admin)' : ''} />
           </ListItem>
         </List>
         {!!menus.length && <Divider />}
