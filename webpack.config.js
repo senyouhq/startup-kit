@@ -122,9 +122,6 @@ module.exports = (env = {}, argv) => {
       path: outputPath,
       publicPath: '/',
     },
-    externals: {
-      jquery: 'jQuery',
-    },
     module: {
       rules: [
         {
