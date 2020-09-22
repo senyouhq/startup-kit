@@ -31,9 +31,9 @@ jobs:
         env:
           ENV_FILE: ${{ secrets.ENV_FILE }}
         run: echo $ENV_FILE > .env
-      - name: Show env
-        run: cat .env
       - name: Deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: yarn deploy
+        run: |
+          export $(cat .env | xargs)
+          yarn deploy
