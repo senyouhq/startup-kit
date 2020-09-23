@@ -40,7 +40,7 @@ module.exports = (env = {}, argv) => {
 
   plugins.push(
     new HtmlWebpackPlugin({
-      title: 'fab admin',
+      title: 'Startup-kit - Senyou',
       template: `${dir.mocks}/index.ejs`,
       filename: 'index.html',
       chunks: ['app'],
@@ -49,7 +49,7 @@ module.exports = (env = {}, argv) => {
 
   plugins.push(
     new HtmlWebpackPlugin({
-      title: 'Signin - fab admin',
+      title: 'Signin - Senyou',
       template: `${dir.mocks}/index.ejs`,
       filename: 'sign-in.html',
       chunks: ['signIn'],
@@ -58,7 +58,7 @@ module.exports = (env = {}, argv) => {
 
   plugins.push(
     new HtmlWebpackPlugin({
-      title: 'Login confirmation - fab admin',
+      title: 'Login confirmation - Senyou',
       template: `${dir.mocks}/index.ejs`,
       filename: 'login-confirmation.html',
       chunks: ['loginConfirmation'],
