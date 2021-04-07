@@ -68,7 +68,7 @@ module.exports = (env = {}, argv) => {
   plugins.push(
     new HtmlWebpackPlugin({
       title: 'Demo - Decision tree ',
-      template: `${dir.mocks}/index.ejs`,
+      template: `${dir.mocks}/demo.ejs`,
       filename: 'demo.html',
       chunks: ['demo'],
     })
