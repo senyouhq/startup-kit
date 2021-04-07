@@ -130,7 +130,7 @@ module.exports = (env = {}, argv) => {
     output: {
       filename: '[name]-[hash].js',
       path: outputPath,
-      publicPath: '/',
+      // publicPath: '',
     },
     module: {
       rules: [
