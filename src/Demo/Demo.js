@@ -227,7 +227,7 @@ import './demo.scss'
         console.log('Clicked on:', d)
         window.alert(`id: ${d.data.id} の${d.data.label}がクリックされました`)
       })
-      .call(d3.drag().on('drag', dragged))
+    // .call(d3.drag().on('drag', dragged))
 
     node
       .append('rect')
