@@ -65,6 +65,15 @@ module.exports = (env = {}, argv) => {
     })
   )
 
+  plugins.push(
+    new HtmlWebpackPlugin({
+      title: 'Demo - Decision tree ',
+      template: `${dir.mocks}/index.ejs`,
+      filename: 'demo.html',
+      chunks: ['demo'],
+    })
+  )
+
   // Copy extra assets into build directory
   plugins.push(
     new CopyWebpackPlugin({
@@ -98,6 +107,7 @@ module.exports = (env = {}, argv) => {
   const entry = {
     app: [`${dir.src}/App`],
     signIn: [`${dir.src}/SignIn`],
+    demo: [`${dir.src}/Demo`],
     loginConfirmation: [`${dir.src}/LoginConfirmation`],
   }
 
@@ -226,6 +236,7 @@ module.exports = (env = {}, argv) => {
         rewrites: [
           { from: /^\/login-confirmation\/?/, to: '/login-confirmation.html' },
           { from: /^\/sign-in\/?/, to: '/sign-in.html' },
+          { from: /^\/demo\/?/, to: '/demo.html' },
         ],
       },
       inline: true,
